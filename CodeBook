@@ -1,0 +1,49 @@
+Code Book for Getting and Cleaning Data Final 
+
+CODE BOOK
+INITIAL DATA
+File name: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+Description: Zipped files containing several separate files that must be manipulated to form a tidy data set. 
+Variables: UCI HAR Dataset
+activity_labels.txt
+features_info.txt - contains description of features
+features.txt - contains list of features
+README.txt 
+SamsungSportsData.txt - final output 
+
+>test
+subject_test.txt - lists subject who participated in generating a given row of data.
+X_test.txt - Lists all variables and observations taken; cross with features to obtain a more descriptive name of the variable.
+y_test.txt - Provides data on type of test(cross reference with activity_labels to decipher)
+>>Inertial Signals (These are subsets of raw data and were not treated in this project)
+>train
+subject_train.txt - lists subject who participated in generating a given row of data.
+X_train.txt - Lists all variables and observations taken; cross with features to obtain a more descriptive name of the variable.
+y_train.txt Provides data on type of test(cross reference with activity_labels
+ to decipher)
+>>Inertial Signals (These are subsets of raw data and were not treated in this project)
+Value Labels:
+
+TIDY DATA SET #1
+File name: EntireDataSetMeanSD
+Description: As per assignment instructions, "Merges the training and the test sets to create one data set; Extracts only the measurements on the mean and standard deviation for each measurement; Uses descriptive activity names to name the activities in the data set; Appropriately labels the data set with descriptive variable names.” quoted from course assignment page, https://www.coursera.org/learn/data-cleaning/peer/FIZtT/getting-and-cleaning-data-course-project 
+Variables:
+index - Index of activity generated per training and test data. Please note not unique as items in test and training were later merged.
+activity - descriptive of activity type performed during this data collection.
+subjectID - ID of subject participating in the given activity for which this row of data was collected.
+category - lists whether the observation was in the “train" or “test" group.
+Other Variables:
+There are multiple other variables. Variables for many different motion dimensions were collected. This data set displays only the subset of those that display the mean or standard deviation of a measurement. 
+The device’s accelerometer and gyroscope were used in collecting motion variables.
+For example: tBodyAcc-mean()-X, tBodyAcc-mean()-Y, tGravityAcc-mean()-Z tBodyAccJerk-mean()-X tBodyAccJerk-mean()-Y,   tBodyAccJerk-mean()-Z tBodyGyro-mean()-X tBodyGyro-mean()-Y,   tBodyGyro-mean()-Z tBodyGyroJerk-mean()-X tBodyGyroJerk-mean()-Y,  tBodyGyroJerk-mean()-Z tBodyAccMag-mean() tGravityAccMag-mean(),  tBodyAccJerkMag-mean() tBodyGyroMag-mean() tBodyGyroJerkMag-mean(),   fBodyAcc-mean()-X fBodyAcc-mean()-Y fBodyAcc-mean()-Z fBodyAcc-meanFreq()-X,   fBodyAcc-meanFreq()-Y fBodyAcc-meanFreq()-Z fBodyAccJerk-mean()-X,  fBodyAccJerk-mean()-Y fBodyAccJerk-mean()-Z fBodyAccJerk-meanFreq()-X,   fBodyAccJerk-meanFreq()-Y fBodyAccJerk-meanFreq()-Z fBodyGyro-mean()-X,   fBodyGyro-mean()-Y fBodyGyro-mean()-Z fBodyGyro-meanFreq()-X,   fBodyGyro-meanFreq()-Y fBodyGyro-meanFreq()-Z fBodyAccMag-mean(), fBodyAccMag-meanFreq() fBodyBodyAccJerkMag-mean(), fBodyBodyAccJerkMag-meanFreq() fBodyBodyGyroMag-mean(), fBodyBodyGyroMag-meanFreq() fBodyBodyGyroJerkMag-mean(), fBodyBodyGyroJerkMag-meanFreq() angle(tBodyAccMean,gravity),   angle(tBodyAccJerkMean),gravityMean) angle(tBodyGyroMean,gravityMean),   angle(tBodyGyroJerkMean,gravityMean) angle(X,gravityMean), angle(Y,gravityMean) angle(Z,gravityMean) tBodyAcc-std()-X tBodyAcc-std()-Y,   tBodyAcc-std()-Z tGravityAcc-std()-X tGravityAcc-std()-Y,   tGravityAcc-std()-Z tBodyAccJerk-std()-X tBodyAccJerk-std()-Y,  tBodyAccJerk-std()-Z tBodyGyro-std()-X tBodyGyro-std()-Y tBodyGyro-std()-Z,   tBodyGyroJerk-std()-X tBodyGyroJerk-std()-Y tBodyGyroJerk-std()-Z,  tBodyAccMag-std() tGravityAccMag-std() tBodyAccJerkMag-std(),  tBodyGyroMag-std() tBodyGyroJerkMag-std() fBodyAcc-std()-X fBodyAcc-std()-Y,   fBodyAcc-std()-Z fBodyAccJerk-std()-X fBodyAccJerk-std()-Y, fBodyAccJerk-std()-Z fBodyGyro-std()-X fBodyGyro-std()-Y fBodyGyro-std()-Z,   fBodyAccMag-std() fBodyBodyAccJerkMag-std() fBodyBodyGyroMag-std(),   fBodyBodyGyroJerkMag-std()
+
+TIDY DATA SET #2
+File name: VariableMeanBySubActivity
+Description: 
+Variables:
+activity - descriptive of activity type performed during this data collection.
+subjectID - ID of subject participating in the given activity for which this row of data was collected.
+Other Variables:
+There are multiple other variables. Variables for many different motion dimensions are presented. 
+This data set displays only the subset of those that display the mean or standard deviation of a measurement, and gives only the mean for each by subject and activity. 
+-----
